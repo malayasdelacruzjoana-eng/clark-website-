@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clark L. Cadahing - My Enchanted Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family:'Segoe UI',sans-serif;
+    color:#f0f0f0;
+    background:#0a1f2e;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+.bg {
+    position:fixed;
+    inset:0;
+    background:linear-gradient(to bottom,#00111c,#0a2e1a);
+    z-index:-2;
+}
+.forest {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:70%;
+    background:url('https://thumbs.dreamstime.com/b/enchanted-forest-path-night-glowing-fireflies-yellow-wildflowers-soft-light-lush-greenery-winding-trail-magical-380064138.jpg') bottom center/cover no-repeat;
+    opacity:.7;
+    animation:pan 100s linear infinite;
+}
+@keyframes pan { to { background-position:100% bottom; } }
+.overlay {
+    position:fixed;
+    inset:0;
+    background:rgba(0,20,30,.5);
+    z-index:-1;
+}
+
+/* Fireflies */
+.firefly {
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:#ffdd00;
+    border-radius:50%;
+    box-shadow:0 0 15px 6px #ffdd00;
+    opacity:0;
+    animation:glow 4s infinite ease-in-out,drift 25s infinite linear;
+}
+@keyframes glow { 50% { opacity:.9; } }
+@keyframes drift { to { transform:translate(120px,-120px); } }
+
+.firefly:nth-child(1){top:15%;left:5%;}
+.firefly:nth-child(2){top:35%;left:25%;}
+.firefly:nth-child(3){top:55%;left:65%;}
+.firefly:nth-child(4){top:25%;left:75%;}
+.firefly:nth-child(5){top:45%;left:10%;}
+.firefly:nth-child(6){top:65%;left:45%;}
+.firefly:nth-child(7){top:20%;left:55%;}
+.firefly:nth-child(8){top:50%;left:85%;}
+
+header {
+    text-align:center;
+    padding:100px 20px 80px;
+}
+h1 {
+    font-size:4.5rem;
+    text-shadow:0 3px 15px #0008;
+    margin-bottom:20px;
+}
+.tagline {
+    font-size:1.6rem;
+    margin-bottom:40px;
+}
+.profile-pic {
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #ffdd00;
+    box-shadow:0 0 25px #ffd70099;
+}
+section {
+    max-width:1100px;
+    margin:80px auto;
+    padding:50px;
+    background:#001e3270;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 15px 40px #0007;
+    text-align:center;
+}
+h2 {
+    font-size:2.8rem;
+    margin-bottom:40px;
+}
+h2::after {
+    content:'';
+    display:block;
+    width:100px;
+    height:4px;
+    background:#ffdd00;
+    margin:20px auto 0;
+    border-radius:2px;
+}
+.buttons-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.page-button {
+    position:relative;
+    padding:30px;
+    border-radius:15px;
+    border:2px solid #ffdd00;
+    cursor:pointer;
+    background-size:cover;
+    background-position:center;
+    transition:.3s;
+    overflow:hidden;
+}
+.page-button::before {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,30,50,.7);
+}
+.page-button:hover {
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px #ffd70066;
+}
+.button-content {
+    position:relative;
+    z-index:1;
+}
+.button-content i {
+    font-size:2.5rem;
+    color:#ffdd00;
+    margin-bottom:10px;
+    display:block;
+}
+footer {
+    text-align:center;
+    padding:60px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+    <div class="forest"></div>
+    <div class="fireflies">
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+    </div>
+</div>
+<div class="overlay"></div>
+
+<header>
+    <h1>Welcome to My Page</h1>
+    <p class="tagline">Clark L. Cadahing - BSIT Student</p>
+    <img src="CLARK.JPG" class="profile-pic">
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <p>Explore my enchanted portfolio! Buttons now have enchanted backgrounds and beautiful sample pictures. Enjoy! ✨</p>
+</section>
+
+<section>
+    <h2>My Personal Info</h2>
+    <div class="buttons-grid">
+
+        <div class="page-button" data-file="myself.html" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800')">
+            <div class="button-content"><i class="fas fa-user"></i>Myself</div>
+        </div>
+
+        <div class="page-button" data-file="myfamily.html" style="background-image:url('https://images.unsplash.com/photo-1511895426328-dc2e054c1fad?w=800')">
+            <div class="button-content"><i class="fas fa-home"></i>My Family</div>
+        </div>
+
+        <div class="page-button" data-file="friend.html" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800')">
+            <div class="button-content"><i class="fas fa-users"></i>My Best Friends</div>
+        </div>
+
+        <div class="page-button" data-file="hobby.html" style="background-image:url('https://images.unsplash.com/photo-1524995997946-a1c1e315c62b?w=800')">
+            <div class="button-content"><i class="fas fa-book"></i>My Hobbies</div>
+        </div>
+
+        <div class="page-button" data-file="food.html" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800')">
+            <div class="button-content"><i class="fas fa-utensils"></i>Favorite Foods</div>
+        </div>
+
+        <div class="page-button" data-file="freetime.html" style="background-image:url('https://images.unsplash.com/photo-1511895426328-dc2e054c1fad?w=800')">
+            <div class="button-content"><i class="fas fa-clock"></i>Free Time Activities</div>
+        </div>
+
+        <div class="page-button" data-file="fav.html" style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800')">
+            <div class="button-content"><i class="fas fa-heart"></i>Favorites (Songs, Movies, etc.)</div>
+        </div>
+
+        <div class="page-button" data-file="actor.html" style="background-image:url('https://images.unsplash.com/photo-1524995997946-a1c1e315c62b?w=800')">
+            <div class="button-content"><i class="fas fa-film"></i>Favorite Actors</div>
+        </div>
+
+    </div>
+</section>
+
+<footer>&copy; 2025 Clark L. Cadahing</footer>
+
+<script>
+document.querySelectorAll('.page-button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        const file=btn.dataset.file;
+        if(file){ window.location.href = file; }
+    });
+});
+</script>
+
+</body>
+</html>
